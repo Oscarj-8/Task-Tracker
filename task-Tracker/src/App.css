@@ -11,6 +11,9 @@
   border-radius: 0.25em;
   margin: 2em auto;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 }
 
 .header {
@@ -28,6 +31,6 @@
 .task-item {
   background-color: rgb(231, 231, 233);
   margin-top: 0.25em;
-  padding: 0.25em;
+  padding: 1em;
   border-radius: 0.25em;
 }
