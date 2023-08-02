@@ -60,6 +60,7 @@ function App() {
         <Header
           title="Task Tracker"
           onToggleForm={() => setToggleForm(!toggleForm)}
+          isToggled={toggleForm}
         />
         {toggleForm && <AddTask onAdd={addTask} />}
         {tasks.length > 0 ? (
