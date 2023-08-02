@@ -1,4 +1,5 @@
 import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import Tasks from "./components/Tasks";
@@ -79,25 +80,27 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="tracker-box">
-        <Header
-          title="Task Tracker"
-          onToggleForm={() => setToggleForm(!toggleForm)}
-          isToggled={toggleForm}
-        />
-        {toggleForm && <AddTask onAdd={addTask} />}
-        {tasks.length > 0 ? (
-          <Tasks
-            tasks={tasks}
-            onDelete={deleteTask}
-            onToggle={toggleReminder}
+    <Router>
+      <div className="container">
+        <div className="tracker-box">
+          <Header
+            title="Task Tracker"
+            onToggleForm={() => setToggleForm(!toggleForm)}
+            isToggled={toggleForm}
           />
-        ) : (
-          "No tasks to show"
-        )}
+          {toggleForm && <AddTask onAdd={addTask} />}
+          {tasks.length > 0 ? (
+            <Tasks
+              tasks={tasks}
+              onDelete={deleteTask}
+              onToggle={toggleReminder}
+            />
+          ) : (
+            "No tasks to show"
+          )}
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
