@@ -35,6 +35,13 @@
   border-radius: 0.25em;
 }
 
+.submit-btn {
+  width: 100%;
+  background-color: rgb(36, 34, 34);
+  color: white;
+  border-radius: 0.25em;
+}
+
 .task-item.reminder {
   border-left: 5px solid green;
 }
@@ -42,4 +49,27 @@
 .task-item h3 {
   display: flex;
   justify-content: space-between;
+}
+
+.addTask-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.checkbox-sec {
+  display: flex;
+  gap: 0.5em;
+}
+.addTask-form label {
+  display: block;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.addTask-form input[type="text"] {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.25em;
 }
