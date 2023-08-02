@@ -5,6 +5,8 @@ import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
 function App() {
+  const [toggleForm, setToggleForm] = useState(false);
+
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -55,8 +57,11 @@ function App() {
   return (
     <div className="container">
       <div className="tracker-box">
-        <Header title="Task Tracker" />
-        <AddTask onAdd={addTask} />
+        <Header
+          title="Task Tracker"
+          onToggleForm={() => setToggleForm(!toggleForm)}
+        />
+        {toggleForm && <AddTask onAdd={addTask} />}
         {tasks.length > 0 ? (
           <Tasks
             tasks={tasks}
